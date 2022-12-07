@@ -6,7 +6,6 @@ export const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/pagina-inicial' element={<Home />} />
-                <Route path='/carrinho' element={<h1>Página de carrinho</h1>} />
 
                 <Route path='/' element={<Navigate to="/pagina-inicial" replace />} />
 
