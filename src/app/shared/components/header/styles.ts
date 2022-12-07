@@ -10,6 +10,10 @@ export const HeaderContainer = styled.header`
 
     margin: 0 auto;
     padding: 0 20px;
+
+    @media (max-width: 994px){
+        justify-content: space-between;
+    }
 `
 
 export const HeaderLogo = styled.div`
@@ -31,6 +35,10 @@ export const NavbarContainer = styled.nav`
 
         color: ${({ theme }) => theme["gray-800"]};
         font-weight: 500;
+    }
+
+    @media (max-width: 994px){
+        display: none;
     }
 `
 
@@ -55,10 +63,29 @@ export const InputContainer = styled.div`
 
         width: 100%;
     }
+
+    @media (max-width: 994px){
+        display: none;
+    }
 `
 
 export const IconsContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 1.25rem;
+
+    @media (max-width: 994px){
+        display: none;
+    }
+`
+
+export const OpenMenuMobile = styled.div`
+    svg {
+        cursor: pointer;
+        color: ${({ theme }) => theme["blue-500"]};
+    }
+
+    @media (min-width: 994px){
+        display: none;
+    }
 `

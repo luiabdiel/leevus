@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { FaBars } from 'react-icons/fa'
 
 import LogoCoral from '../../../assets/images/logo.svg'
 import IconSearch from '../../../assets/images/icon-search.svg'
@@ -6,9 +7,14 @@ import IconWishlist from '../../../assets/images/icon-wishlist.svg'
 import IconProfile from '../../../assets/images/icon-profile.svg'
 import IconBag from '../../../assets/images/icon-bag.svg'
 
-import { HeaderContainer, HeaderLogo, IconsContainer, InputContainer, NavbarContainer } from "./styles"
+import { HeaderContainer, HeaderLogo, IconsContainer, InputContainer, NavbarContainer, OpenMenuMobile } from "./styles"
 
-export const Header = () => {
+
+interface IHeaderProps {
+    setMenuIsVisible: (active: boolean) => void
+}
+
+export const Header: React.FC<IHeaderProps> = ({ setMenuIsVisible }) => {
     return (
         <HeaderContainer>
             <HeaderLogo>
@@ -33,6 +39,9 @@ export const Header = () => {
                 <img src={IconProfile} alt="" />
                 <img src={IconBag} alt="" />
             </IconsContainer>
+            <OpenMenuMobile>
+                <FaBars size={30} onClick={() => setMenuIsVisible(true)} />
+            </OpenMenuMobile>
         </HeaderContainer>
     )
 }
