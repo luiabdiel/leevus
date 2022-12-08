@@ -1,10 +1,11 @@
+import { useState } from "react"
 import { ThemeProvider } from "styled-components"
-import { Header, Hero, MenuMobile } from "../../shared/components"
 
-import { Warning } from "./warning/Warning"
+import { Header, Hero, MenuMobile } from "../../shared/components"
+import { Warning } from "./components/warning/Warning"
+import { Arrivals } from "./components/arrivals/Arrivals"
 
 import { defaultTheme, GlobalStyle } from "../../styles"
-import { useState } from "react"
 
 export const Home = () => {
     const [menuIsVisible, setMenuIsVisible] = useState(false)
@@ -20,6 +21,7 @@ export const Home = () => {
                 <Header setMenuIsVisible={setMenuIsVisible} />
                 <Warning />
                 <Hero />
+                <Arrivals />
             </>
         </ThemeProvider>
     )
